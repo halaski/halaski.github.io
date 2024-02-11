@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Prüfungsprogramm</title>
+
+	<style>
+	.img-wrapper::after {
+    font-size: 12px;
+    content: 'Vergrößern=Klick bzw. Tap';
+    display: block;
+}
+	</style>
+  </head>
+  <body>	
+ 
+  <div class="container">
+    <h1>Gelb- bis Braungurt</h1>
+      <p>
+	   Es gibt mehrere, etwas unterschiedliche Prüfungsprogramme. Die Unterschiede sind aber spätestens einige Jahre nach der Dan-Prüfung nicht mehr zu sehen.
+	   Bei Interesse siehe ddk-ev.de: <a href="https://www.ddk-ev.de/jiu-jitsu/pruefungsordnung/">jiu jitsu</a> und <a href="https://www.ddk-ev.de/ju-jutsu/pruefungsprogramm/">ju jutsu</a>.
+       Hier wird nach dem Programm von Randori geprüft:
+ 
+      </p>
+      <p>
+	     <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_003.jpeg"></img>
+		 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_004.jpeg"></img>
+			 
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_009.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_010.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_011.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_012.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_013.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_014.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_015.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_016.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_017.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_018.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_019.jpeg"></img>
+			 
+		 <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_020.jpeg"></img>
+			 
+		 
+			 
+      </p>
+	  <p>   
+	  <em>
+	    
+ 
+</em>
+      </p>
+	  <a href="index.htm">Home</a>
+	
+  <div class="modal in" id="viewImg" tabindex="-1" role="dialog" style="display: none;">
+  <div class="modal-dialog modal-lg" style="max-width: 1500px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div id="imgViewer" style="overflow-x: scroll;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		 <script type="text/javascript">
+  $('img').on('click', function(e) {
+  $('#imgViewer').html('').append( $(e.currentTarget).clone().removeClass('img-responsive').removeClass('img-thumbnail') )
+  $('#viewImg').modal('show')
+})
+
+  $('img').each(function(i,e) {
+  $(e).wrap('<div class="img-wrapper"></div>')
+})
+	</script>
+  </body>
+</html>
