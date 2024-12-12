@@ -16,7 +16,100 @@
     content: 'Vergrößern=Klick bzw. Tap';
     display: block;
 }
+ /* Allgemeine Tabellen-Styles */
+        .techniken {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .techniken th,
+        .techniken td {
+            padding: 8px;
+            border: 1px solid #ddd; /* Sanftes Grau */
+        }
+
+        .techniken th {
+            border-bottom: 2px solid #ddd;
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /* Linien an den Spaltenrändern */
+        .techniken th:first-child,
+        .techniken td:first-child {
+            border-left: 2px solid #ddd;
+        }
+
+        .techniken th:last-child,
+        .techniken td:last-child {
+            border-right: 2px solid #ddd;
+        }
+
+        .techniken th:nth-child(2),
+        .techniken td:nth-child(2) {
+            border-left: 2px solid #ddd;
+        }
+
+        /* Letzte Tabellenlinie */
+        .techniken tbody tr:last-child td {
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Farben für Gürtelfarben */
+        .gelberpunkt::before {
+            content: "\2022 ";
+            color: #ffd700;
+        }
+
+        .orangerpunkt::before {
+            content: "\2022 ";
+            color: #ffa500;
+        }
+
+        .gruenerpunkt::before {
+            content: "\2022 ";
+            color: #008800;
+        }
+
+        .blauerpunkt::before {
+            content: "\2022 ";
+            color: #0000ff;
+        }
+
+        .braunerpunkt::before {
+            content: "\2022 ";
+            color: #a52a2a;
+        }
+
+        /* Buttons */
+        .btn-toggle {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            background-color: white;
+            color: #007bff;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-toggle.active {
+            background-color: #007bff;
+            color: white;
+        }
 	</style>
+	 <script>
+        // Sichtbarkeit von Zeilen umschalten und Button-Zustand aktualisieren
+        function toggle_visibility(className, button) {
+            const rows = document.querySelectorAll(`.${className}`);
+            rows.forEach(row => {
+                row.style.display = row.style.display === "none" ? "table-row" : "none";
+            });
+
+            // Button-Zustand ändern
+            button.classList.toggle('active');
+        }
+    </script>
   </head>
   <body>	
  
@@ -40,6 +133,156 @@
 YT (Kanal "Michael Smolik") <br>
 <a href="https://www.youtube.com/watch?v=spxXVlmha5k&ab_channel=MichaelSmolik">Boxen - Haken</a>
       </p>
+	  
+	  <div class="container my-4">
+<br/>
+    <h2 class="text-center">Interaktive Tabelle fürs Prüfungsprogramm</h2>
+
+    <!-- Buttons zum Umschalten -->
+    <div class="d-flex flex-wrap justify-content-start">
+        <button class="btn btn-toggle" onclick="toggle_visibility('gelbgurt', this)">Gelbgurt anzeigen/ausblenden</button>
+        <button class="btn btn-toggle" onclick="toggle_visibility('orangegurt', this)">Orangegurt anzeigen/ausblenden</button>
+		&nbsp; Noch nicht fertig:&nbsp;
+        <button class="btn btn-toggle" onclick="toggle_visibility('gruengurt', this)">Grüngurt anzeigen/ausblenden</button>
+        <button class="btn btn-toggle" onclick="toggle_visibility('blaugurt', this)">Blaugurt anzeigen/ausblenden</button>
+        <button class="btn btn-toggle" onclick="toggle_visibility('braungurt', this)">Braungurt anzeigen/ausblenden</button>
+    </div>
+    <h4 class="text-center">Grundtechniken   </h4>
+    <!-- Tabelle -->
+    <table class="techniken">
+        <thead>
+        <tr>
+            <th>Kategorie</th>
+            <th>Technik</th>
+        </tr>
+        </thead>
+        <tbody>
+      
+        <tr>
+            <td>Fallübung</td>
+            <td>
+			  <span class="gelberpunkt gelbgurt"> Seitlich <br/></span> 
+              <span class="gelberpunkt gelbgurt"> Vorwärts <br/></span> 
+			  <span class="gelberpunkt gelbgurt"> Rückwärts <br/></span> 
+			  <span class="orangerpunkt orangegurt"> Sturz/gewaltsam vorwärts <br/></span> 
+		  	  <span class="orangerpunkt orangegurt"> Sturz/gewaltsam vorwärts</span>
+			</td>
+        </tr>
+        <tr>
+            <td>Grund&shy;techniken</td>
+            <td>
+			  <span class="gelberpunkt gelbgurt"> Oi-Zuki (Führhandfauststoß) <br/></span> 
+			  <span class="gelberpunkt gelbgurt"> Gyaku-Zuki (Schlaghandfauststoß) <br/></span> 
+			  <span class="orangerpunkt orangegurt"> Haken (zum Kopf und zum Bauch) <br/></span> 
+			  <span class="gelberpunkt gelbgurt"> Mae-Geri (Fußstoß vorwärts) <br/></span> 
+			  <span class="gelberpunkt gelbgurt"> Yoko-Geri (Fußstoß seitwärts) <br/></span> 
+			  <span class="gelberpunkt gelbgurt"> Low-Kick <br/></span> 
+			  
+			  <span class="gelberpunkt gelbgurt"> Gedan-Barai (Block unten gegen Tritt) <br/></span> 
+			  <span class="gelberpunkt gelbgurt"> Age-Uke (Block gegen Angriff von oben) <br/></span> 
+			  <span class="orangerpunkt orangegurt"> Uchi-Uke (Block nach außen) <br/></span> 
+			  <span class="orangerpunkt orangegurt"> !!!Soto-Uke (Block nach innen)  </span> 
+			  
+			</td>
+        </tr>
+        
+
+       
+        
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container my-4">
+<br/>
+   
+   
+    <h4 class="text-center">Selbstverteidungstechniken   </h4>
+    <!-- Tabelle -->
+    <table class="techniken">
+        <thead>
+        <tr>
+            <th>Kategorie</th>
+            <th>Technik</th>
+        </tr>
+        </thead>
+        <tbody>
+      
+   
+		<tr><td>Faust-&shy;/Fußangriffe 	</td><td><span class="orangegurt orangerpunkt"> Fauststoß zum Kopf (Armblock nach außen oder innen, Schlag)<br/></span>
+												<span class="orangegurt orangerpunkt"> Schwinger (Abtauchen, Schlag/Knieschlag)<br/></span> 
+		 <span class="orangegurt orangerpunkt"> !!!Fußstoß vorwärts (Armblock nach unten, Schlag)</span></td></tr>
+		<tr><td>Handum&shy;klammerung 	</td><td>
+		 <span class="gelbgurt gelberpunkt"> von vorne mit einer Hand diagonal<br/></span>
+		 <span class="gelbgurt gelberpunkt"> &#8594 anschließend Transporttechnik (San-Kyo)<br/></span>
+		 <span class="orangegurt orangerpunkt"> !!!von vorne mit einer Hand (Kipphandhebel)<br/></span>
+		 <span class="gelbgurt gelberpunkt"> von vorne mit beiden Händen (Vorwärtstritt, Entwinden)<br/></span>
+		 <span class="orangegurt orangerpunkt"> !!!von vorne mit beiden Händen (Entwinden, Schlag)</span></td></tr>
+		<tr><td>Jacken&shy;fassen    	</td><td><span class="gelbgurt gelberpunkt"> von vorne (Außensichel)<br/></span>
+         <span class="orangegurt orangerpunkt"> !!!Kragenfassen von hinten (Außensichel)</span></td></tr>
+		<tr><td>Körper&shy;um&shy;klammerung 	</td><td><span class="gelbgurt gelberpunkt"> von vorne über Unterarmen (Kopf nach hinten überkippen)<br/></span>
+		 <span class="orangegurt orangerpunkt"> von vorne über Oberarmen (Innensichel)<br/></span>
+		 <span class="orangegurt orangerpunkt"> von der Seite (Schulterwurf)<br/></span>
+		 <span class="orangegurt orangerpunkt"> !!!von hinten (Ellb. links, Ellb. rechts, drehen, Knie)</span></td></tr>
+		<tr><td>Schwitz&shy;kasten   	</td><td><span class="gelbgurt gelberpunkt"> von der Seite (hinters Ohr drücken, Körperstreckhebel)<br/></span>
+		 <span class="orangegurt orangerpunkt"> von hinten, Glgw. hinten (Ellbogen, drehen, Außensichel)</span></td></tr>
+		<tr><td>Würgen          	</td><td><span class="gelbgurt gelberpunkt"> von vorne, gestreckt (Griff nach oben sprengen, Knie)<br/></span>
+		<span class="gelbgurt gelberpunkt"> von vorne, gestreckt (Griff nach unten sprengen, Schlag)<br/></span>
+		<span class="orangegurt orangerpunkt"> !!!von vorne, angewinkelt (beidhändiger Handballenschlag, Tritt)<br/></span>
+		<span class="gelbgurt gelberpunkt"> von der Seite (Schlag unten, Ellbogen, Fußstoß seitw.)<br/></span>
+		<span class="orangegurt orangerpunkt"> von der Seite (<a href="../gokyo/1_4_O-Goshi.htm">O-Goshi</a> (Großer Hüftwurf))<br/></span>
+		<span class="orangegurt orangerpunkt"> !!!von hinten (Fußstoß abwärts, harter Zug am Arm, Schulterwurf)<br/></span>
+		<span class="gelbgurt gelberpunkt"> am Boden, danebensitzend<br/></span>
+		<span class="gelbgurt gelberpunkt"> &#8594 Seitstreckhebel<br/></span>
+		<span class="orangegurt orangerpunkt"> am Boden, Reitsitz<br/></span>
+		<span class="orangegurt orangerpunkt"> &#8594 Abwerfen,Tate-Shiho-Gatame</span></td></tr>
+		<tr><td>Stock           	</td><td><span class="gelbgurt gelberpunkt"> von oben (Block, Knie, Außensichel)<br/></span>
+			 <span class="orangegurt orangerpunkt"> !!!von innen (Block, Armbeugehebel)<br/></span>
+			 <span class="orangegurt orangerpunkt"> !!!&#8594 Aufheben und Transport mit Handbeugehebel</span></td></tr>
+		<tr><td>Messer          	</td><td><span class="orangegurt orangerpunkt"> !!!von unten (beidh. Kreuzblock, Handdrehbeugehebel)</span></td></tr>
+	
+
+       
+        
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container my-4">
+<br/>
+   
+
+   
+    <h4 class="text-center">Judo   </h4>
+    <!-- Tabelle -->
+    <table class="techniken">
+        <thead>
+        <tr>
+            <th>Kategorie</th>
+            <th>Technik</th>
+        </tr>
+        </thead>
+        <tbody>
+   
+		<tr><td>Würfe           </td><td><span class="gelbgurt gelberpunkt"> <a href="../gokyo/1_5_O-Soto-Gari.htm">O-Soto-Gari</a> (Große Außensichel)<br/></span> 
+		 <span class="orangegurt orangerpunkt"> <a href="../gokyo/1_7_O-Uchi-Gari.htm">O-Uchi-Gari</a> (Große Innensichel)<br/></span> 
+		 <span class="gelbgurt gelberpunkt"> <a href="../gokyo/1_4_O-Goshi.htm">O-Goshi</a> (Großer Hüftwurf)<br/></span> 
+		 <span class="orangegurt orangerpunkt"> <a href="../gokyo/1_8_Seoi_nage.htm"> Ippon Seoi-Nage</a> (Schulterwurf)</span></td></tr>
+		<tr><td>Halte&shy;griffe     </td><td><span class="gelbgurt gelberpunkt"> Kesa-Gatame (z.B. nach Außensichel)<br/></span> 
+		 <span class="orangegurt orangerpunkt"> !!!Tate-Shiho-Gatame (z.B. als Folgetechnik für Kesa-Gatame)</span>
+		<tr><td>Befrei&shy;ung     </td><td><span class="orangegurt orangerpunkt"> Kesa-Gatame (Bein umklammern, rüberrollen)<br/></span> 
+		 <span class="orangegurt orangerpunkt"> !!!Tate-Shiho-Gatame (Beine aufstellen, abwerfen)</span></td></tr>
+	  
+      
+
+       
+        
+        </tbody>
+    </table>
+</div>
+	  
       <p>
 	     <img class="img-responsive img-thumbnail"  src="jiu_pruefpgm/signal-2024-01-26-110816_003.jpeg"></img>
 		 
